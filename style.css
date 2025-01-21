@@ -1,0 +1,951 @@
+@font-face {
+  font-family: 'Architekt';
+  src: url('06d2fcbfc3c21b6628aaeecbd436ab0f.eot');
+  src: url('06d2fcbfc3c21b6628aaeecbd436ab0f-1.eot') format('embedded-opentype'),
+      url('06d2fcbfc3c21b6628aaeecbd436ab0f.woff2') format('woff2'),
+      url('06d2fcbfc3c21b6628aaeecbd436ab0f.woff') format('woff'),
+      url('06d2fcbfc3c21b6628aaeecbd436ab0f.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+body {
+  font-family: 'Architekt' !important;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+@layer base{
+  body {
+      @apply dark:bg-black bg-white;
+  }
+}
+
+
+
+.grow{
+  transform: scale(4);
+  background: white;
+  mix-blend-mode: difference; 
+  border: none;
+}
+
+.span-load {
+  overflow: hidden;
+  display: block;
+}
+
+.loader-wrap svg {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 110vh;
+}
+.loader-wrap .loader-wrap-heading h1 {
+  font-size: 120px;
+  z-index: 20;
+  color: #e0e0e0;
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-family: 'Ogg';
+}
+.preload-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 110vh;
+  width: 100%;
+}
+.preload-container h1 {
+  font-family: 'Ogg';
+  font-weight: lighter;
+  font-size: 100px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .loader-wrap svg {
+    width: 200vw;
+    margin-left: -50vw;
+  }
+  .loader-wrap .loader-wrap-heading,
+  .preload-container h1 {
+    font-size: 60px;
+  }
+  .team.grid.gap-0.sm\:grid-cols-2.lg\:grid-cols-4 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+}
+.team-bio img {
+
+  height: auto !important;
+}
+}
+@media (max-width: 1365px) {
+.team-bio{
+  color: black;
+}
+}
+@media (prefers-color-scheme: dark) {
+  .team-bio {
+    color: white; /* Color for dark mode */
+  }
+}
+
+.mobile-menu.open {
+  display: block;
+  opacity: 1;
+  width: 66%;
+}
+
+
+/* Animation styles */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.5; }
+}
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@media (max-width: 1024px) {
+  .bannerlogo{
+    transform: none !important;
+  }
+}
+
+
+
+section {
+  padding: 70px 0px;
+  position: relative;
+}
+
+.middle-text p {
+  font-size: 28px;
+  text-transform: uppercase;
+  line-height: normal;
+  font-weight: 300;
+  padding: 0 30px;
+}
+
+
+.info {
+  max-width: 75%;
+}
+section.middle-text {
+  padding: 100px 0px;
+  position: relative;
+}
+
+
+
+
+img.subscribe-logo {
+  animation: spin 16s linear infinite;
+}
+
+
+.linkedin-bio {
+  position: absolute;
+  right: 15px;
+  bottom: 0px;
+  width: 35px;
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg)
+  }
+
+  to {
+      transform: rotate(1turn)
+  }
+}
+
+
+.footer-main {
+  border-top: 1px solid #202020;
+  /* padding-top: 5px;
+  margin-top: 30px; */
+}
+
+
+
+
+.our-service .title-hedings  h2 {
+  font-family: 'Architekt';
+}
+
+
+
+.empowr-info p {
+  padding-bottom: 20px;
+  font-family:'Architekt' !important;
+  font-size: 18px;
+  padding-top: 20px;
+  line-height: 30px;
+}
+
+.empowr-info h2 {
+  font-size: 48px;
+  font-family:'Architekt' !important;
+}
+
+.our-service .title-hedings {
+  padding-bottom: 40px;
+}
+
+
+section.our-service {
+  position: relative;
+}
+
+.cog-edge p {
+  padding-bottom: 20px;
+}
+
+.our-service img.empowering-banner {
+  padding: 0 150px;
+}
+
+
+.cog-edge .title-hedings {
+  margin-bottom: 30px;
+}
+
+.cog-edge .title-hedings h2:after {
+  bottom: 20px;
+  width:366px;
+  border: 1px solid #707070;
+  height: 1px;
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.cog-edge .title-hedings h2 {
+  padding-bottom: 70px;
+  position: relative;
+  font-family:'Architekt' !important;
+}
+
+.cog-edge p {
+  padding-bottom: 35px;
+  font-size: 28px;
+  text-transform: uppercase;
+  line-height: normal;
+  font-weight: 300;
+}
+
+section.cog-edge {
+  padding: 200px 0px;
+}
+
+
+.sound {
+  position: relative;
+}
+
+.sound img.futuristic {
+  width: 100%;
+  object-fit: contain;
+}
+
+.sound img.logo {
+  position: absolute;
+  left: 33px;
+  top: 20px;
+}
+
+.sound-info {
+  position: absolute;
+  bottom: 30px;
+  color: white;
+  padding: 0 30px;
+  z-index: 1;
+}
+
+div#left-slide-sound:after, div#right-slide-sound:after, div#real-estate:after, div#real-estate1:after, div#real-estate2:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0.008841036414565795) 59%);
+  z-index: 0;
+  top: 0;
+}
+
+.light img.subscribe-logo {
+  filter: brightness(0);
+}
+
+.art-inno {
+  z-index: 1;
+}
+
+.sound-info p {
+  font-family:'Architekt' !important;
+  font-size: 18px;
+}
+
+
+.sound-info h2 {
+  font-size: 48px;
+  font-family:'Architekt' !important;
+  padding-bottom: 15px;
+}
+.title-hedings h2 {
+  font-size: 61px;
+  font-family:'Architekt' !important;
+  line-height: normal;
+}
+
+.team-bio {
+  position: relative;
+}
+
+.bio {
+  position: absolute;
+  bottom: 20px;
+  width:100%;
+  overflow: hidden;
+  padding: 0 45px;
+  text-align: left;
+}
+
+
+.bio p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+
+.bio h2 {
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+
+.bio h4 {
+  padding-bottom: 10px;
+  font-size: 18px;
+}
+
+.most-advance span {
+  font-style: italic;
+}
+
+.bio p {
+  font-size: 16px;
+  font-family:'Architekt' !important;
+}
+
+.most-advance .title-hedings {
+  padding-bottom: 40px;
+}
+
+.adv-box {
+  height: 536px;
+  position: absolute;
+  bottom: 70px;
+  z-index: -1;
+  border-radius: 30px;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  margin: 0 30px;
+  padding: 0 50px;
+}
+
+section.most-advance {
+  position: relative;
+  z-index: 0;
+}
+
+.ai-pic p {
+  font-size: 28px;
+  padding: 40px 0px;
+  line-height: normal;
+}
+
+.footer-main .foot-address {
+  padding: 0px;
+}
+
+.foot-bottom li a {
+  font-family:'Architekt' !important;
+  font-size: 20px;
+}
+
+
+.foot-address p {
+  font-family:'Architekt' !important;
+  font-size: 16px;
+}
+
+.footer-copywrite {
+  padding: 0 30px;
+}
+
+
+
+.foot-bottom li {
+  display: inline-block;
+  padding: 0 10px;
+  line-height: normal;
+  border-right: 1px solid #ccc;
+}
+
+.foot-bottom li:last-child {
+  border-right: none;
+}
+
+.footer-copywrite {
+  padding: 20px 30px;
+}
+
+.copywrite-info p {
+  font-family:'Architekt' !important;
+  font-size: 16px;
+}
+
+.foot-nav li {
+  display: inline;
+  padding-right: 30px;
+}
+
+.foot-nav {
+  text-align: center;
+}
+
+.foot-nav li:last-child {
+  padding-right: 0;
+}
+
+.inner-banner {
+  padding: 100px 0px;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+}
+
+
+.content-description h3 {
+  font-size: 25px;
+  font-family: 'Architekt' !important;
+  margin-bottom: 10px;
+}
+
+/* .privacy-content {
+  margin: 45px 0px;
+} */
+
+.content-description {
+  padding: 20px;
+}
+.content-description p {
+  font-family:'Architekt' !important;
+  font-size:16px;
+  margin-bottom: 25px;
+}
+
+.content-description ul li {
+  font-family:'Architekt' !important;
+  font-size: 16px;
+  position: relative;
+  padding-bottom: 10px;
+  padding-left: 5px;
+}
+
+.content-description ul {
+  margin-left: 15px;
+  margin-bottom: 20px;
+}
+
+.content-description ul li:after {
+  border: 2px solid;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  position: absolute;
+  left: -14px;
+  top: 8px;
+}
+
+
+.inner-banner .title-hedings h1 {
+  line-height: 50px;
+}
+
+.team-bio:hover .bio {
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all .3s;
+  overflow: visible;
+  bottom: auto;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.team-bio:hover .bio p {
+  display: block;
+}
+
+.team-bio:hover:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+@media  only screen and (min-width:1366px) and (max-width:1919px) {
+
+.our-service img.empowering-banner {
+  padding: 0 30px;
+}
+section {
+  overflow: hidden !important;
+}
+
+section.cog-edge {
+  padding: 100px 0px;
+  overflow: hidden !important;
+  transform: none !IMPORTANT;
+}
+
+
+
+.bio::-webkit-scrollbar-thumb {
+  background: #007cba;
+}
+.bio::-webkit-scrollbar {
+  width: 2px;
+  background: white;
+}
+
+.team-bio:hover .bio
+{
+  overflow-y: auto;
+  max-height: 360px;
+}
+.team-bio:hover .bio .linkedin-bio {
+  position: unset;
+  margin-top: 10px;
+}
+}
+
+@media  only screen and (min-width:1024px) and (max-width:1366px) {
+  section.sound-home, .our-service img.empowering-banner {
+    padding: 0 10px;
+}
+
+.light .empowr-info h2, .light .empowr-info p {
+  color: black;
+}
+
+.light .logo-empower img {
+  filter: brightness(0);
+}
+.team-bio .bio {
+  position: unset;
+  transform: unset;
+  overflow: visible;
+  padding: 28px 10px;
+}
+
+.linkedin-bio {
+  display: none;
+}
+
+.light .bio h2, .light  .bio h4, .light  .bio p {
+  color: black;
+}
+
+.bio p {
+  display: block;
+}
+
+.sound-info {
+  position: unset;
+  background: black;
+  min-height: 320px;
+  padding: 20px;
+}
+div#left-slide-sound:after, div#right-slide-sound:after, div#real-estate:after, div#real-estate1:after, div#real-estate2:after
+{
+  display: none;
+}
+
+.cursor {
+  display: none;
+}
+
+
+.bio h4 {
+  padding-bottom: 10px;
+  font-size: 14px;
+}
+
+.bio h2 {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.info {
+  max-width: 100%;
+  padding: 0 30px;
+}
+
+
+.social-logos {
+  justify-content: center;
+}
+.foot-address p {
+  font-family:'Architekt' !important;
+  font-size: 16px;
+}
+.footer-copywrite ul {
+  text-align: center;
+}
+.foot-bottom li a {
+  font-family:'Architekt' !important;
+  font-size: 16px;
+}
+.copywrite-info p {
+  font-family:'Architekt' !important;
+  font-size: 16px;
+  padding-bottom: 0px;
+}
+.ai-pic p {
+  font-size: 14px;
+  padding: 25px 45px;
+  line-height: normal;
+}
+.adv-box {
+  height: 290px;
+  position: absolute;
+  bottom: 70px;
+  z-index: -1;
+  border-radius: 30px;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  margin: 0 30px;
+  padding: 0 50px;
+}
+.title-hedings h2 {
+  font-size: 30px;
+
+}
+.middle-text p {
+  font-size: 18px;
+}
+
+.cog-edge p {
+  font-size: 20px;
+}
+section.cog-edge {
+  padding: 100px 0px;
+}
+.cog-edge .title-hedings h2:after
+{
+  width: auto;
+}
+.sound-info p {
+  font-size: 16px;
+}
+.empowr-info p {
+  font-size: 16px;
+}
+.empowr-info h2 {
+  font-size: 40px;
+}
+.empowr-info {
+  padding: 0 30px;
+}
+
+.footer-main .foot-address {
+  padding: 0 10px;
+  justify-content: flex-start;
+}
+
+.left-0.top-0.w-full {
+  width: 35%;
+}
+
+section {
+  overflow: hidden !important;
+}
+
+section.cog-edge {
+  padding: 100px 0px;
+  overflow: hidden !important;
+  transform: none !IMPORTANT;
+}
+.team-bio:hover .bio {
+  transform: unset;
+}
+
+.team-bio img {
+  height: auto !important;
+}
+.bio::-webkit-scrollbar-thumb {
+  background: #007cba;
+}
+.bio::-webkit-scrollbar {
+  width: 2px;
+  background: white;
+}
+
+.team-bio:hover .bio
+{
+  overflow-y: auto;
+  max-height: 360px;
+}
+ 
+.team-bio:hover:after
+{
+  display: none;
+}
+.team-bio:hover .bio .linkedin-bio {
+  position: unset;
+}
+}
+
+
+@media  only screen and (max-width:1023px) {
+  section.sound-home, .our-service img.empowering-banner {
+    padding: 0 10px;
+}
+
+.team-bio img {
+  height: auto !important;
+}
+
+.team-bio:hover .bio {
+  transform: unset;
+}
+
+.linkedin-bio
+{
+  display: none;
+}
+.light .empowr-info h2, .light .empowr-info p {
+  color: black;
+}
+.light .logo-empower img {
+  filter: brightness(0);
+}
+
+div#left-slide-sound:after, div#right-slide-sound:after, div#real-estate:after, div#real-estate1:after, div#real-estate2:after
+{
+  display: none;
+}
+
+.foot-nav li {
+  display: block;
+  padding-right: 0;
+  padding-bottom: 10px;
+}
+
+
+.foot-nav {
+  margin-bottom: 30px;
+}
+
+.cursor {
+  display: none;
+}
+
+.sound-info {
+  position: unset;
+  background: black;
+  padding: 20px;
+  min-height: 350px;
+}
+
+.bio p {
+  display: block;
+}
+
+
+
+
+.team-bio .bio {
+  position: unset;
+  transform: unset;
+  overflow: visible;
+  padding: 28px 25px;
+}
+
+.light .bio h2, .light  .bio h4, .light  .bio p {
+  color: black;
+}
+
+.team-bio:hover:after
+{
+  display: none;
+}
+
+
+.copywrite-info {
+  text-align: center;
+  border-top: 1px solid #767676;
+  padding-top: 30px;
+}
+
+section {
+  overflow: hidden !important;
+}
+
+img.hamburger-menu {
+  filter: brightness(0) invert(1);
+}
+
+.light img.hamburger-menu {
+  filter: brightness(0);
+}
+
+.sound-info h2 {
+  padding-bottom: 0;
+  font-size: 40px;
+}
+
+.footer-main {
+  padding-bottom: 30px;
+  padding-top: 30px;
+  margin: 0;
+}
+
+.footer-copywrite {
+  padding: 20px 20px;
+}
+
+
+.info {
+  max-width: 100%;
+  padding: 0 30px;
+}
+
+section.middle-text {
+  padding: 40px 0px;
+  position: relative;
+  transform: unset !important;
+}
+.social-logos {
+  justify-content: center;
+}
+.foot-address p {
+  font-family:'Architekt' !important;
+  font-size: 16px;
+}
+.footer-copywrite ul {
+  text-align: center;
+}
+.foot-bottom li a {
+  font-family:'Architekt' !important;
+  font-size: 16px;
+}
+.copywrite-info p {
+  font-family:'Architekt' !important;
+  font-size: 16px;
+  padding-bottom: 0px;
+}
+.ai-pic p {
+  font-size: 14px;
+  padding: 25px 45px;
+  line-height: normal;
+}
+.adv-box {
+  height: 290px;
+  position: absolute;
+  bottom: 70px;
+  z-index: -1;
+  border-radius: 30px;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  margin: 0 30px;
+  padding: 0 50px;
+}
+.title-hedings h2 {
+  font-size: 30px;
+
+}
+.middle-text p {
+  font-size: 18px;
+  padding: 0px;
+}
+
+.cog-edge p {
+  font-size: 20px;
+}
+section.cog-edge {
+  padding: 100px 0px;
+  overflow: hidden !important;
+  transform: none !IMPORTANT;
+}
+.cog-edge .title-hedings h2:after
+{
+  width: auto;
+}
+.sound-info p {
+  font-size: 16px;
+}
+.empowr-info p {
+  font-size: 16px;
+}
+.empowr-info h2 {
+  font-size: 30px;
+  line-height: normal;
+  padding-bottom: 0px;
+  padding-top: 20px;
+}
+
+.empowr-info {
+  padding: 0 30px;
+}
+section.banner {
+  padding: 70px 30px;
+}
+
+.logo-empower img {
+  display: block;
+  margin: auto;
+}
+.footer-main .foot-address {
+  padding: 0 10px 30px;
+  justify-content: center;
+}
+}
+
+
+
+@media (min-width: 960px) {
+  html
+{
+  scroll-behavior: smooth;
+}
+}
+
+.team-bio img {
+  height: 100%;
+}
+
+.team.grid.gap-0.sm\:grid-cols-2.lg\:grid-cols-4 {
+  overflow: hidden;
+}
+
+

@@ -1,0 +1,505 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cognitive.ai</title>
+  <script type="module">
+    import heroicons from 'https://cdn.jsdelivr.net/npm/heroicons@2.2.0/+esm'
+  </script>
+  <script src="gsap.min.js"></script>
+  <script src="ScrollTrigger.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="3.4.16"></script>
+  <script>
+    // Configure Tailwind for dark mode
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {},
+      },
+    };
+  </script>
+</head>
+
+<body class="dark:bg-black ">
+  <main class="flex  flex-col  justify-between  bg-color">
+    <div class="preld-cont">
+      <div class="loader-wrap absolute z-50 h-screen  w-full flex overflow-hidden items-center justify-center bg-transparent">
+        <svg viewbox="0 0 1000 1000" preserveaspectratio="none">
+          <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+        </svg>
+
+        <div class="loader-wrap-heading">
+          <span class="span-load">
+            <h1>
+              <img class="logo" src="logo.png" alt="Logo">
+            </h1>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- <Header /> -->
+    <header class="main-header sticky top-0 z-10 pb-[30px] bg-[#ffffff] dark:bg-black mx-auto w-full ">
+      <div class="mx-auto w-full max-w-[1536px]">
+      <div class="flex justify-between items-center block lg:hidden">
+        <button class="mob-menu m-4 mb-0  dark:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+
+      </button>
+ 
+    </div>
+
+      <div class="mobile-menu fixed top-0 left-0 w-0 transition-all duration-300 h-full opacity-0 z-40">
+        <div class="mobile-menu-panel bg-white max-w-[20rem] h-full p-4">
+          <button class="close-menu">X</button>
+          <nav class="flex flex-col gap-y-4 p-2 text-black mt-7">
+            <a href="index.htm">Home</a>
+            <a href="index.htm#about">ABOUT US</a>
+            <a href="index.htm#our-service">OUR SERVICES</a>
+            <a href="index.htm#team">OUR TEAM</a>
+            <a href="index.htm#contact">CONTACT US</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class=" w-full z-10 pt-2 lg:pt-[2rem] ">
+        <div class=" relative w-full flex items-center border-t lg:border-t-0 justify-between pt-8 lg:pt-0 p-4 mx-auto brightness-0	dark:brightness-100	">
+          <div class="logo max-w-[250px] w-[180px] sm:w-auto h-auto">
+            <a href="index.htm">
+              <img src="logo.png" alt="Logo" width="100%" height="auto">
+            </a>
+          </div>
+
+          <nav class=" text-[19px] hidden lg:block">
+            <ul class="flex gap-8 text-black dark:text-white">
+              <li><a href="index.htm#our-service">SERVICES</a></li>
+              <li><a href="index.htm#about">ABOUT US</a></li>
+              <li><a href="index.htm#team">OUR TEAM</a></li>
+              <li><a href="index.htm#contact">CONTACT US</a></li>
+            </ul>
+          </nav>
+
+          <div class="flex items-center gap-7 pl-4 sm:pl-0">
+            <!--<div class=" ">-->
+            <!--  <a href="https://email.cognitive.ai/subscription"-->
+            <!--    class=" border-2 rounded-full px-4 py-2 lg:px-6 lg:py-3 dark:text-white">-->
+            <!--    Subscribe-->
+            <!--  </a>-->
+            <!--</div>-->
+
+            <div class="light-dark w-10 h-10 cursor-pointer dark:text-white top-[-45px] lg:top-0 right-4 lg:right-0 absolute  lg:relative">
+              <svg class=" light-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+              </svg>
+              <svg class="dark-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </header>
+
+    <section class=" py-[70px] px-[30px] dark:bg-black">
+      <div class="container mx-auto">
+        <div class="w-full grid gap-4 sm:grid-cols-1 lg:grid-cols-2 items-center banner-main">
+          <div class="banner-left">
+            <div class="banner-caption  ">
+              <h2 class="text-black dark:text-white  text-[35px] lg:text-[45px] xl:text-[61px]">
+                The <span>Genesis</span> of Cognitive.ai
+              </h2>
+              <p class="text-black dark:text-white text-[23px] pt-[30px] uppercase tracking-normal	">
+                Cognitive was conceived in 2023 during the boom in generative
+                AI. We realized quickly that we could match our expertise in
+                the digital asset space with impactful solutions that could
+                help people all over the world streamline processes in
+                multiple verticals.
+                <br><br>
+                Official CA:
+              </p>
+            </div>
+          </div>
+
+          <div class="banner-right">
+            <img class="bannerlogo float-end w-full lg:w-[500px] xl:w-full  max-w-[600px]" src="banner.png" alt="banner-Logo">
+          </div>
+        </div>
+        <!--<div class="subscribe">-->
+        <!--  <img class="subscribe-logo brightness-0	dark:brightness-100	w-[200px]" src="./images/subscribe.png"-->
+        <!--    alt="subscribe-Logo" />-->
+        <!--</div>-->
+      </div>
+    </section>
+
+    <section id="para-text-section" class="middle-text text-center text-white dark:bg-black">
+      <div class="container mx-auto">
+        <div class="container mx-auto">
+          <div class="w-full info mx-auto">
+            <p id="para-text" class="mb-4 text-black dark:text-white">
+              The initial call to action for us was the ethical issues that
+              surround AI. Humanity is reckoning with a powerful tool of an
+              unprecedented nature equipped with an intelligence of its own.
+              Like anything, the benefits it brings come with a set of risks
+              that need to be addressed. Cognitive is dedicated to building
+              awareness around this societal paradigm shift and promises to
+              build platforms that allow humanity's collective voice to be
+              heard.
+            </p>
+            <p id="para-text" class="mb-4 text-black dark:text-white">
+              The name'
+              <a href="index.htm">Cognitive.ai</a>
+              represents the human element of AI. We believe that any
+              advancement in the field should augment human skill and
+              creativity, not impede or pose a threat to it. It is also
+              important that, like a parent, we implement a moral compass and
+              strong set of values when raising and nurturing this intelligent
+              life.
+            </p>
+
+            <p id="para-text" class="mb-4 text-black dark:text-white">
+              Equipped with a diverse and driven team, Cognitive promises to
+              offer solutions across a wide range of industries, designed to
+              empower the people harnessing them. We also make our products
+              easy to access through resonant and powerful domains at the
+              heart.
+            </p>
+            <p id="para-text text-black dark:text-white">
+              We are
+              <a href="index.htm">Cognitive.ai</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="empower relative">
+      <img class="empowering-banner m-auto" src="empowering.png" alt="empowering">
+      <div class="container mx-auto">
+        <div class="empower-main unset text-black dark:text-white lg:absolute left-0 right-0 px-[40px] bottom-[115px] max-w-[1636px] m-auto lg:text-white">
+          <div class="grid gap-4 sm:grid-cols-1 lg:grid-cols-2 items-end">
+            <div class="w-full empowr-info mx-auto Innovations">
+              <h2>Empowering Lives Through Ai</h2>
+              <p>
+                At
+                <a href="index.htm">Cognitive.ai</a>, we
+                are dedicated to addressing complex problems through advanced
+                AI solutions that improve lives and make processes more
+                efficient. Our mission has two main objectives: to enhance
+                individual productivity through AI-driven efficiency, and to
+                foster creativity and expression through innovative AI
+                applications. We strive to democratize the benefits of AI,
+                making sure its transformative power is universal and
+                accessible to everyone.
+              </p>
+            </div>
+            <div class="logo-empower">
+              <img class="logo sm:float-none lg:float-end m-auto w-[250px] brightness-0 lg:brightness-100 dark:brightness-100" src="logo.png" alt="Logo">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="our-service" id="our-service">
+      <div class="title-hedings pb-[40px] text-white text-center">
+        <h2 class="text-black dark:text-white">Our Ai Innovations</h2>
+      </div>
+      <img class="w-full empowering-banner m-auto" src="image_neo.png" alt="artificial-intelligence">
+      <div class="container mx-auto">
+        <div class="empower-main unset text-black dark:text-white lg:absolute left-0 right-0 px-[40px] bottom-[115px] max-w-[1536px] m-auto lg:text-white">
+          <div class="grid gap-4 sm:grid-cols-1 lg:grid-cols-2 items-end">
+            <div class="w-full empowr-info mx-auto Innovations">
+              <h2>
+                <a href="http://neo.ai/">Neo.ai</a>
+              </h2>
+              <p class="sound-text1">
+                <a href="http://neo.ai/">Neo.ai</a> will be an AI-powered sound wellness app designed to alleviate
+                stress and
+                help you deal with the daily grind.
+                Talk to Neo about health-related issues, objectives and creating a brighter future.
+              </p>
+            </div>
+            <div class="logo-empower">
+              <img class="logo sm:float-none lg:float-end m-auto w-[250px] brightness-0 lg:brightness-100 dark:brightness-100" src="logo.png" alt="Logo">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sound-home px-[10px] xl:px-[150px] mb-4">
+
+      <div id="slide-action-sound" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+
+        <div id="real-estate2" class="sound">
+          <img class="logo float-end w-[250px]" src="logo.png" alt="Logo">
+          <img class="blueprint-item w-full object-fill h-80 lg:h-full" src="bcn.jpg" alt="about_ai_image">
+          <div class="w-full min-h-[20rem] md:min-h-[28rem] lg:min-h-fit bg-black p-5 text-white py-5 mx-auto lg:absolute lg:z-10 lg:bottom-8 lg:bg-transparent">
+            <h2 class="sound-text3 text-4xl">
+              <a href="http://bcn.com/">Bcn.com</a>
+            </h2>
+            <p class="sound-text3">
+              The latest website of the city of Barcelona, Spain.
+              It serves as a central digital hub for residents,
+              visitors, and businesses, offering a wealth of information
+              about the city's services, events, culture, and public administration.
+              The site provides updates on cultural activities, festivals,
+              and public initiatives, positioning Barcelona as a vibrant,
+              modern city with a rich history and dynamic future.
+            </p>
+          </div>
+        </div>
+        <div id="real-estate2" class="sound">
+          <img class="logo float-end w-[250px]" src="logo.png" alt="Logo">
+          <img class="blueprint-item w-full object-fill h-80 lg:h-full" src="about_ai_image.jpg" alt="about_ai_image">
+          <div class="w-full min-h-[20rem] md:min-h-[28rem] lg:min-h-fit bg-black p-5 text-white py-5 mx-auto lg:absolute lg:z-10 lg:bottom-8 lg:bg-transparent">
+            <h2 class="sound-text3 text-4xl">
+              <a href="http://aboutai.com/">Aboutai.com</a>
+            </h2>
+            <p class="sound-text3">
+              <a href="http://aboutai.com/">About AI</a> is a product that differs from our others because it
+              uses a .com domain name, which is more suitable for a mass
+              audience. As part of our mission, we feel that educating the
+              public to AI's nature is of critical importance, so we will
+              offer a free resource that provides bite-sized videos to make
+              understanding AI easy and fun.
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <!-- <div id="slide-action-sound" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+
+      </div> -->
+    </section>
+
+    <section class="sound-home px-[10px] xl:px-[150px] mb-4">
+
+      <div id="slide-action-sound" class="grid gap-4 grid-cols-1">
+
+        <div id="real-estate2" class="sound">
+          <img class="logo float-end w-[250px]" src="logo.png" alt="Logo">
+          <img class="blueprint-item w-full" src="simulation-cognitive2.png" alt="about_ai_image">
+          <div class="w-full min-h-64 md:min-h-fit bg-black p-5 text-white py-5 mx-auto lg:absolute lg:z-10 lg:bottom-8 lg:bg-transparent">
+            <h2 class="sound-text3 text-4xl">
+              <a href="https://simulation.com/">simulation.com</a>
+            </h2>
+            <p class="sound-text3">
+              <a href="https://simulation.com/">simulation.com</a>
+              is a blog and information resource brought to you by the minds of
+              <a href="index.htm"> Cognitive.ai</a>.
+              As technophiles, we discuss simulation theory and how that might impact our daily reality. Explore ways to
+              deal with life's challenges and ideas on how to break the chains of the material world.
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <!-- <div id="slide-action-sound" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+
+      </div> -->
+    </section>
+    <section class=" myart-inno cog-edge text-center text-white para-text-section2" id="about">
+      <div class="container mx-auto">
+        <div class="w-full info mx-auto">
+          <div class="title-hedings pb-[40px]">
+            <h2 class="para-text2 text-black dark:text-white">
+              The Cognitive.ai Edge
+            </h2>
+          </div>
+
+          <p class="text-black dark:text-white">
+            We stand out in the marketplace by using generic and highly
+            relevant .ai domains, making it easier for consumers to navigate
+            to our products.
+          </p>
+          <p class="text-black dark:text-white">
+            To stay ahead of emerging trends, we continuously update our
+            products to ensure they remain dynamic and sophisticated in what
+            is a rapidly evolving space. Our energy and passion for these
+            technologies drive innovation and ensure we are constantly
+            committed to improvement.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="meet-team pb-[40px] text-center text-white" id="team">
+      <div class="container mx-auto">
+        <div class="w-full info mx-auto">
+          <div class="title-hedings pb-[40px]">
+            <h2 class="text-black dark:text-white">Meet The Team</h2>
+          </div>
+        </div>
+      </div>
+      <div class="team grid gap-0 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="team-bio dark:text-white">
+          <img class="futuristic w-full" src="grag.avif" alt="gragdoomb">
+          <div class="bio">
+            <h2>Grag Doomb</h2>
+            <h4>Creative</h4>
+            <p>
+              Grag's background in digital assets led him to conceive and create
+              Cognitive. Since AI has become central to the evolution of
+              the internet and digital processes, Grag chose to leverage its power and offer products and solutions to a
+              wider audience.
+            </p>
+            <div class="linkedin-bio">
+              <img class="futuristic" src="linked.png" alt="linkedin">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-bio dark:text-white">
+          <img class="futuristic w-full " src="ai-generated-valentino.webp" alt="Valentino">
+          <div class="bio">
+            <h2>Valentino Vendetta</h2>
+            <h4>Ai Consultant</h4>
+            <p>
+              Valentino has more than 20 years of experience with online businesses. His focus is on creating positive and
+              forward-thinking AI-centric products. Vince is a consultant and advisor to Cognitive.
+            </p>
+            <div class="linkedin-bio">
+              <img class="futuristic" src="linked.png" alt="linkedin">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-bio dark:text-white">
+          <img class="futuristic w-full" src="woman1.jpg" alt="we">
+          <div class="bio">
+            <h2>Selena Ive</h2>
+            <h4>Executive Assistant</h4>
+            <p>
+              Coming from a management background and having worked as an
+              Office Manager, she made the bold decision to completely change
+              her life. She began searching for a job that would inspire her,
+              where she could not only enhance her skills but also acquire new
+              knowledge. This is when she crossed paths with Grag and Valentino,
+              and finally found her rightful place. With great excitement, she
+              accepted the position of Executive Assistant at Cognitive.ai,
+              embarking on a new journey in the AI industry alongside them.
+            </p>
+            <div class="linkedin-bio">
+
+              <img class="futuristic" src="linked.png" alt="linkedin">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-bio dark:text-white">
+          <img class="futuristic w-full" src="woman2.jpg" alt="naoteam">
+          <div class="bio">
+            <h2>Isabella Richi</h2>
+            <h4>COO</h4>
+            <p>
+              With almost a decade of experience in Marketing and Brand
+              Management, Isabella has played pivotal roles in various
+              multinational projects and led diverse teams. Her passion for
+              creativity and her enthusiasm for working in multicultural
+              environments have been the driving forces behind her career.
+              Seeking to leverage her skills while embracing new challenges,
+              Isabella made a significant shift in her professional journey, which
+              led her to Cognitive, where she is eagerly working as a
+              Project Manager.
+            </p>
+            <div class="linkedin-bio">
+              <a href="#">
+
+              <img class="futuristic" src="linked.png" alt="linkedin">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="most-advance">
+      <div class="w-full info mx-auto text-center">
+        <div class="title-hedings pb-[40px] text-white">
+          <h2 class="text-black dark:text-white">
+            The Most Advanced <br>
+            <span>AI Platform</span> Ever Seen
+          </h2>
+        </div>
+      </div>
+
+      <div class="main-btm-pic">
+        <div id="humanoid-cont" class="container mx-auto">
+          <div class="ai-pic mx-auto text-center text-white">
+            <img id="humanoid-img" class="humanoid-robot m-auto w-[1361px]" src="humanoid-robot-working.png" alt="humanoid">
+
+            <p class="text-black dark:text-white">
+              Harness the power of AI to revolutionize your home, creativity,
+              and sound. Explore our platform and join us in shaping tomorrow's world, today.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="adv-box bg-white dark:bg-black"></div>
+    </section>
+
+    <!-- <Footer /> -->
+    <div class="footer-main" id="contact">
+      <div class="footer-copywrite sm:block lg:flex items-center text-black dark:text-white">
+        <div class="foot-bottom w-full">
+          <div class="foot-address text-black dark:text-white flex gap-4">
+            <svg class="h-8 w-8 text-white-500" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <p class="text-black dark:text-white">
+              <br>
+            </p>
+          </div>
+        </div>
+
+        <div class="foot-nav w-full">
+          <ul>
+
+          </ul>
+        </div>
+        <div class="copywrite-info w-full lg:text-right">
+          <p class="text-black dark:text-white">
+            © 2025 Cognitive
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    // Toggle dark mode
+    const toggleDarkModeButton = document.getElementById('toggleDarkMode');
+
+    // Check if dark mode is enabled in local storage
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+      document.documentElement.classList.add('dark');
+    }
+
+    toggleDarkModeButton.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      if (document.documentElement.classList.contains('dark')) {
+        localStorage.setItem('dark-mode', 'enabled');
+      } else {
+        localStorage.setItem('dark-mode', 'disabled');
+      }
+    });
+  </script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
